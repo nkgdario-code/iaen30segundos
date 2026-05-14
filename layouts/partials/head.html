@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}IA en 30 Segundos — Tutoriales rápidos de IA{{ else }}{{ .Title }} | IA30{{ end }}</title>
+<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}Tutoriales de Inteligencia Artificial en menos de 30 segundos. ChatGPT, Claude, Midjourney y herramientas IA gratuitas.{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}IA en 30 Segundos{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}Tutoriales rápidos de inteligencia artificial.{{ end }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="IA30">
+<meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="/css/style.css">

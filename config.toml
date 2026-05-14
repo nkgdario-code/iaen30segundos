@@ -1,0 +1,15 @@
+# IA en 30 Segundos — Tutoriales rápidos de Inteligencia Artificial
+
+baseURL = "https://iaen30segundos.com"
+languageCode = "es-ES"
+title = "IA en 30 Segundos — Tutoriales rápidos de Inteligencia Artificial"
+defaultContentLanguage = "es"
+buildFuture = true
+
+[params]
+  description = "Tutoriales de IA en menos de 30 segundos. ChatGPT, Claude, Midjourney, automatización con inteligencia artificial y herramientas gratuitas."
+  author = "IA30"
+  ogImage = "/images/og-image.png"
+
+[markup.goldmark.renderer]
+  unsafe = true

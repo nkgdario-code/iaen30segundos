@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>IA explicada en <span class="accent">30 segundos</span></h1>
+  <p class="hero-sub">Tutoriales ultrarápidos de inteligencia artificial. Sin tecnicismos, sin rodeos, directo al grano.</p>
+  <a href="/posts/" class="btn-primary">Ver tutoriales →</a>
+</section>
+
+<section class="featured">
+  <h2>Últimos tutoriales</h2>
+  <div class="posts-grid">
+    {{ range first 6 (where .Site.RegularPages "Section" "posts") }}
+    <article class="post-card">
+      <a href="{{ .Permalink }}">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary }}</p>
+        <span class="post-date">{{ .Date.Format "2 de enero de 2006" }}</span>
+      </a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="cta">
+  <h2>🧠 1 truco de IA cada semana</h2>
+  <p>Suscríbete y aprende a usar la inteligencia artificial en tu día a día.</p>
+  <form class="newsletter-form" action="/api/subscribe" method="POST">
+    <input type="email" name="email" placeholder="tu@email.com" required>
+    <button type="submit">Quiero aprender →</button>
+  </form>
+  <p class="note">Sin spam. Un email a la semana.</p>
+</section>
+{{ end }}

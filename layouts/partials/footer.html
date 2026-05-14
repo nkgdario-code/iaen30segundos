@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <p class="footer-logo">IA<span class="accent">30</span></p>
+      <p class="footer-desc">Tutoriales rápidos de Inteligencia Artificial. Aprende IA en menos de 30 segundos.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 IA30. info@iaen30segundos.com</p>
+    </div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.newsletter-form').forEach(form => {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const input = this.querySelector('input[type="email"]');
+    const email = input.value.trim();
+    const orig = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    try {
+      const r = await fetch('/api/subscribe', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({email}) });
+      const d = await r.json();
+      if (d.success) { this.innerHTML = '<p class="ok">✅ ¡Te has suscrito!</p>'; }
+      else { btn.textContent = orig; btn.disabled = false; alert('Error'); }
+    } catch(e) { btn.textContent = orig; btn.disabled = false; alert('Error de conexión'); }
+  });
+});
+</script>

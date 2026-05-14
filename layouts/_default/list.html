@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="list-page">
+  <h1>Tutoriales de IA</h1>
+  <p>Todos los tutoriales rápidos de inteligencia artificial.</p>
+  <div class="posts-list">
+    {{ range .Pages }}
+    <article class="post-item">
+      <div class="post-meta">
+        <time>{{ .Date.Format "02/01/2006" }}</time>
+      </div>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Summary }}</p>
+      <a href="{{ .Permalink }}" class="read-more">Leer →</a>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
