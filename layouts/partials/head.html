@@ -9,4 +9,31 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="IA30">
 <meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}IA en 30 Segundos{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:image" content="https://iaen30segundos.com/images/og-image.png">
+<meta name="twitter:image" content="https://iaen30segundos.com/images/og-image.png">
+
+{{ if not .IsHome }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ end }}
+
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "description": "{{ .Params.description }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {"@type": "Person", "name": "IA30"},
+  "publisher": {"@type": "Organization", "name": "IA30"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "{{ .Permalink }}"}
+}
+</script>
+{{ end }}
+
+<link rel="alternate" type="application/rss+xml" title="IA30 RSS" href="/index.xml">
+
 <link rel="stylesheet" href="/css/style.css">
+
