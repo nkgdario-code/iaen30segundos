@@ -4,8 +4,7 @@
       "HUGO_VERSION": "0.121.2"
     }
   },
-  "compress": true,
-  "headers": [
+  "headers":  [
     {
       "source": "/posts/(.*)",
       "headers": [
